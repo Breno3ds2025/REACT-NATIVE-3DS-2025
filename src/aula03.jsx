@@ -18,12 +18,13 @@ class Aula03 extends Component {
     render() {
 
         return(
-            <View style={ styles.container }>
-                <TouchableOpacity style={[styles.botao, {backgroundColor: this.backgroundColor}]} onPress={this.changeColor}>
-                    <Text style={styles.texto}>Toque para mudar a cor do fundo</Text>
+            <View style={[ styles.container, {backgroundColor: this.state.backgroundColor}]}>
+                <TouchableOpacity style={[styles.botao, {backgroundColor: this.state.backgroundColor}]} onPress={this.changeColor}>
+                    <Text style={styles.textoBotao}>Toque para mudar a cor do fundo</Text>
                 </TouchableOpacity>
             </View>
         );
+        
     }
 }
 
@@ -40,12 +41,17 @@ const styles = StyleSheet.create({
     botao: {
         backgroundColor: 'blue',
         padding: 15,
-        borderRadius: 5
+        borderRadius: 5,
+        borderWidth: 3,
     },
 
-    texto: {
+    textoBotao: {
         color: 'white',
         fontWeight: 'bold',
-    }
+        textShadowRadius: 5,
+        textShadowColor: 'black',
+    },
+
+
 
 })
